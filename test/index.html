@@ -1,0 +1,61 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>wordspin</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- animated background canvas -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- app UI sits on top -->
+  <div class="app">
+    <header>
+      <h1>Random Site Word Analyzer</h1>
+      <p class="subtitle">Pick a random site or paste text, choose a starter character and generate a riddle / rhyming poem / haiku.</p>
+    </header>
+
+    <main>
+      <section class="controls">
+        <textarea id="textInput" placeholder="Paste URLs (one per line) or paste text here..." rows="4"></textarea>
+
+        <div class="row">
+          <input id="letterInput" maxlength="1" placeholder="Letter or number to analyze" />
+          <select id="generationType">
+            <option value="riddle">Riddle</option>
+            <option value="poem">Poem (Rhyming)</option>
+            <option value="haiku">Haiku</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <button id="btnRandom">Pick Random Source</button>
+          <button id="btnAnalyze" class="ghost">Analyze</button>
+          <button id="btnClear" class="ghost">Clear</button>
+        </div>
+      </section>
+
+      <section id="results" class="panel">
+        <div class="stats">
+          <div><strong>Total words:</strong> <span id="totalWords">—</span></div>
+          <div><strong>Words starting with:</strong> <span id="startsWith">—</span></div>
+        </div>
+
+        <label>Generated</label>
+        <pre id="generated">(nothing yet)</pre>
+      </section>
+    </main>
+
+    <footer>
+      Tip: Some sites block direct fetch (CORS). If fetch fails, the app falls back to sample text. Background animation uses random letters/numbers flowing upward.
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
